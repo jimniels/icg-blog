@@ -7,10 +7,9 @@
     "get-posts": "node ./scripts/get-posts-from-dropbox.js",
     "start": "npm run get-posts && cd ./src && bundle exec jekyll serve",
     "start-netlify-functions": "netlify-lambda serve ./src/_netlify-functions",
-    "build": "npm run get-posts && npm run build-netlify-functions && npm run transpile && cd ./src && bundle exec jekyll build",
+    "build": "npm run get-posts && npm run build-netlify-functions && cd ./src && bundle exec jekyll build",
     "build-netlify-functions": "netlify-lambda build ./src/_netlify-functions",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src/create/components --out-dir src/create/components"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,10 +22,6 @@
   },
   "homepage": "https://github.com/jimniels/netlibox#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-transform-react-jsx": "^7.1.6",
     "dotenv": "^6.0.0",
     "dropbox": "^4.0.5",
     "fs-extra": "^6.0.1",
