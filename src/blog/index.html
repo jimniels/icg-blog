@@ -1,0 +1,89 @@
+---
+layout: default
+title: Blog
+id: blog
+---
+<div class="wrapper" id="blog">
+  <nav>
+    <h4>Tags</h4>
+    {% assign sortedTags = site.tags | sort %}
+    {% for tag in sortedTags %}
+      <div>
+        <label><input type="checkbox" name="tags" value="{{ tag | first }}" /> {{ tag | first }}</label>
+      </div>
+    {% endfor %}
+    
+
+    <h4>Categories</h4>
+    {% assign sortedCats = site.categories | sort %}
+    {% for category in sortedCats %}
+      <div>
+        <label><input type="checkbox" name="categories" value="{{ category | first }}" /> {{ category | first }}</label>
+      </div>
+    {% endfor %}
+    
+  </nav>
+  <main>
+    {% for post in site.posts %}
+      <article data-tags="{% if post.tags %}{{ post.tags | join: ' ' }}{% endif %}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          <span>{{ post.date | date: "%-d" }}</span>
+          <span>{{ post.date | date: "%b" }}</span>
+          <span>{{ post.date | date: "%Y" }}</span>
+        </time>
+        <div>
+          <h1><a href="#">{{ post.title }}</a></h1>
+          {{ post.content }}
+        </div>
+        
+    
+        <div class="meta">
+          Author: {{ post.author }}
+          <br />
+          Tagged in:
+            {% for tag in post.tags %}
+            <a href="#">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </article>
+    {% endfor %}
+  </main>
+</div>
+
+<script>
+  let activeTags = [];
+
+  [].slice.call(document.querySelectorAll("[name='tags']")).forEach($checkbox => {
+     $checkbox.addEventListener("click", (e) => {
+      const tag = e.target.value; 
+      if (e.target.checked) {
+        activeTags.push(tag);
+      } else {
+        activeTags.splice(activeTags.indexOf(tag))
+      }
+
+      [].slice.call(document.querySelectorAll("[data-tags]")).forEach($el => {
+        const elTags = $el.getAttribute("data-tags");
+
+        if (activeTags.length === 0) {
+          $el.style.display = "block";
+        } else {
+          let hasTag = false;
+          for (let i = 0; i < activeTags.length; i++) {
+            if (elTags.includes(activeTags[i])) {
+              hasTag = true;
+              break;
+            }  
+          }
+          if (hasTag) {
+            $el.style.display = "block";
+          } else {
+            $el.style.display = "none";
+          }
+        }
+      });
+    })
+  })
+</script>
+
+

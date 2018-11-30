@@ -1,0 +1,213 @@
+/* Pay no attention to whether this is a "best practice" for writing styles
+   this is purely for the purpose of a simple demo. */
+:root {
+  --color-highlight: rgba(65, 183, 196, 1);
+  --color-highlight-1: rgba(65, 183, 196, 0.075);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Open Sans", Verdana, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: rgba(11, 50, 89, 1);
+}
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+#blog {
+  padding-top: 100px;
+}
+#blog main {
+  width: 750px;
+  margin: 0 30px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+#blog nav {
+  float: right;
+  width: 150px;
+  position: sticky;
+  top: 100px;
+  flex-grow: 1;
+  font-size: 14px;
+  opacity: 0.75;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+a:hover {
+  color: rgb(6, 28, 49);
+  background: var(--color-highlight-1);
+}
+time {
+  position: absolute;
+  font-size: 14px;
+  width: 70px;
+  text-align: center;
+  left: -35px;
+  top: 54px;
+  background: var(--color-highlight);
+  color: white;
+  padding: 0 5px;
+  font-weight: 700;
+  border-radius: 50%;
+  height: 70px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+time span {
+  line-height: 1;
+  display: block;
+}
+time span:first-child {
+  font-size: 16px;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+main#blog {
+  padding-top: 100px;
+}
+main h1,
+main h2,
+main h3,
+main h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0125rem;
+}
+main h1 {
+  font-size: 18px;
+  margin-top: 0;
+}
+blockquote {
+  border-left: 1px solid #999;
+  margin: 0;
+  padding-left: calc(1.618rem / 2);
+}
+article {
+  padding: 50px 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.header {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.header .wrapper {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul {
+  display: flex;
+  list-style-type: none;
+}
+.header ul li {
+  margin-left: 35px;
+}
+.header .active {
+  color: var(--color-highlight);
+}
+.header a {
+  border-bottom: none;
+}
+.header a:hover {
+  color: var(--color-highlight);
+}
+
+footer {
+  margin: 120px 0 10px;
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+
+.attachments {
+  margin: 0;
+  padding: 0;
+}
+.attachments li {
+  list-style-type: none;
+  margin-bottom: 1.618rem;
+}
+.attachments a {
+  border-bottom: none;
+}
+
+code {
+  background-color: var(--color-highlight-1);
+  padding: 0 5px;
+}
+
+.meta {
+  margin-top: 40px;
+  opacity: 0.5;
+}
+.meta a {
+  border-bottom-width: 0;
+}
+.meta a:hover {
+  border-bottom-width: 1px;
+}
+
+/* loader */
+.loader {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#iframe {
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=3640f60…)
+    no-repeat 50%;
+  background-size: 120px;
+}

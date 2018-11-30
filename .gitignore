@@ -1,0 +1,7 @@
+.DS_STORE
+build-netlify-functions/
+build/
+package-lock.json
+src/img
+src/_posts
+.env

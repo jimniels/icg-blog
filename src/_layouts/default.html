@@ -1,0 +1,27 @@
+<html lang="en" >
+<head>
+	<meta charset="UTF-8" />
+  <title>{{ page.title }} | Insight Catastrophe Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+  <header class="header">
+    <div class="wrapper">
+      <img src="https://icg-sandbox.netlify.com/assets/insight-color.svg" width="200" />
+      <ul>
+        <li><a href="/" class="{% if page.id == 'home' %}active{% endif %}">Home</a></li>
+        <li><a href="/about/" class="{% if page.id == 'about' %}active{% endif %}">About</a></li>
+        <li><a href="/offerings/" class="{% if page.id == 'offerings' %}active{% endif %}">Offerings</a></li>
+        <li><a href="/careers/" class="{% if page.id == 'careers' %}active{% endif %}">Careers</a></li>
+        <li><a href="/blog/" class="{% if page.id == 'blog' %}active{% endif %}">Blog</a></li>            
+      </ul>
+    </div>
+  </header>
+
+  {{ content }}
+  
+</body>
+</html>
