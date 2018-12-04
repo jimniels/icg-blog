@@ -36,8 +36,8 @@ getFolderContentsFromDbx("").then(response => {
         src: entry.path_display,
         dest: path.join(POSTS_DIR, entry.path_display)
       });
-    } else if (entry[".tag"] === "folder" && entry.path_display === "/_img") {
-      getFolderContentsFromDbx("/_img").then(imgResponse => {
+    } else if (entry[".tag"] === "folder" && entry.path_display === "/img") {
+      getFolderContentsFromDbx("/img").then(imgResponse => {
         imgResponse.entries.forEach(imgEntry => {
           downloadFileFromTo({
             src: imgEntry.path_display,
